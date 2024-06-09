@@ -25,7 +25,7 @@ useEffect(()=>{
   });
 
   return ()=>{
-    socket.disconnect();
+   return socket.disconnect();
   };
 
 },[])
@@ -34,7 +34,6 @@ const sendChat=()=>{
   const socket=socketIOClient(ENDPOINT);
   socket.emit('message',chat);
   setChat('');
-
   console.log(chats);
 }
 
